@@ -24,9 +24,8 @@ public class ViewBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_books);
-
         Objects.requireNonNull(getSupportActionBar())
-                .setTitle(getIntent().getStringExtra("TITLE"));
+                .setTitle("Books & Stocks");
 
         this.loadAvailableBooks();
     }

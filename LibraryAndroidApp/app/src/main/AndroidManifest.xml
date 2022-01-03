@@ -12,11 +12,12 @@
         <activity
             android:name=".BookEventActivity"
             android:exported="false"
-            android:parentActivityName=".ViewBooksActivity"/>
+            android:launchMode="singleTop"
+            android:parentActivityName=".ViewBooksActivity" />
         <activity
             android:name=".ViewBooksActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
