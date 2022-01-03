@@ -8,4 +8,5 @@ public interface ILibrary {
     void returnBook(String bookId, String username);
     List<Book> getAvailableBooks();
     List<UserEvent> getUserHistory(String username);
+    Book getBookDetails(String bookId);
 }
