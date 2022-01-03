@@ -19,22 +19,10 @@ public class BookEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_event);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         String bookId = getIntent().getStringExtra("BOOK_ID");
         this.loadBookDetails(bookId);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     private void loadBookDetails(String bookId) {
         Book book = LibraryUtil.getInstance().library.getBookDetails(bookId);
