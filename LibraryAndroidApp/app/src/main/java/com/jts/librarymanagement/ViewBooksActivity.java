@@ -17,12 +17,16 @@ import android.widget.TextView;
 import com.pp.librarymanagement.lib.Book;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ViewBooksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_books);
+
+        Objects.requireNonNull(getSupportActionBar())
+                .setTitle(getIntent().getStringExtra("TITLE"));
 
         this.loadAvailableBooks();
     }

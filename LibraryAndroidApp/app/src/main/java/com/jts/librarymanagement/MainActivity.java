@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void manageBookEvent() {
         Intent intent = new Intent(this, ViewBooksActivity.class);
+        intent.putExtra("TITLE", "Books & Stocks");
         startActivity(intent);
     }
 }

@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.pp.librarymanagement.lib.Book;
 
+import java.util.Objects;
+
 public class BookEventActivity extends AppCompatActivity {
 
     @Override
@@ -20,12 +22,16 @@ public class BookEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book_event);
 
         String bookId = getIntent().getStringExtra("BOOK_ID");
-        this.loadBookDetails(bookId);
+        Book book = LibraryUtil.getInstance().library.getBookDetails(bookId);
+
+        Objects.requireNonNull(getSupportActionBar())
+                .setTitle(book.name);
+
+        this.loadBookDetails(book);
     }
 
 
-    private void loadBookDetails(String bookId) {
-        Book book = LibraryUtil.getInstance().library.getBookDetails(bookId);
+    private void loadBookDetails(Book book) {
         if (book == null) {
             return;
         }
